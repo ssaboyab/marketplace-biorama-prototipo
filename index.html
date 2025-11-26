@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace Biorama - Protótipo</title>
+    <link rel="stylesheet" href="style.css"> 
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2U67EQFqe7OhCYfGfoau9HNQfSD3KQr0&callback=initMap" async defer></script>
+</head>
+<body>
+    <header>
+        <h1>Origem familiar com escala industrial</h1>
+    </header>
+
+    <main>
+        <section id="mapa-secao">
+            <h2>🗺️ Áreas de Produção Agroflorestal</h2>
+            <p>Clique nas bandeirinhas para ver as famílias, as áreas e o impacto ambiental!</p>
+            <div id="map"></div> </section>
+
+        <hr>
+
+        <section id="calculadora-secao">
+            <h2>🧮 Calculadora de Investimento em Área</h2>
+            <label for="litros">Quero comprar (em litros de óleo):</label>
+            <input type="number" id="litros" value="1000" min="100" placeholder="Ex: 5000">
+            <button onclick="calcularArea()">Calcular</button>
+
+            <div id="resultado-calculadora">
+                <p>Para **<span id="litros-output">1000</span> litros**, você precisa investir em:</p>
+                <h3>📐 <span id="area-output">5000</span> m² de Agrofloresta</h3>
+                <p>💨 Isso ajuda a sequestrar o CO2 equivalente a tirar **<span id="carbono-output">20</span> carros da rua** por um mês! (Estimativa)</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="simulacao-compra">
+            <h2>🛒 Simulação de Compra e Rastreio</h2>
+            <div class="bloco-simulacao">
+                <h3>Pedido #2025-AF-101</h3>
+                <p>Produto: Óleo de Mamona - 1000L</p>
+                <p>Status: **Colheita a Caminho!** 🚚</p>
+                <progress value="75" max="100"></progress> 75% concluído.
+            </div>
+            <p><a href="#">Ver todos os pedidos e Orçamentos</a></p>
+        </section>
+
+        <div id="selo-amigo">
+            <h2>✨ Selo de Amigo da Agrofloresta</h2>
+            <p>Use este selo em seu site para mostrar seu compromisso social e ambiental.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Marketplace Biorama</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
