@@ -28,101 +28,22 @@ h2 {
     margin-top: 0;
 }
 
-/* --- 2. ESTILOS DA ANTECAPA (HERO SECTION) --- */
-#hero-section {
-    position: relative;
-    /* 90vh significa 90% da altura visível da tela */
+/* --- 2. ESTILOS DA ANTECAPA SIMPLIFICADA --- */
+#capa-estatica {
+    /* Altura: 90vh significa 90% da altura visível da tela, cobrindo quase tudo */
     height: 90vh; 
-    overflow: hidden; 
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    text-align: center;
-}
-
-/* Camada das Fotos (Slide) */
-#slideshow {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.4); 
-    background-blend-mode: darken;
     
-    /* VINCULAÇÃO DAS FOTOS: ESTA LINHA SERÁ MUDADA NO PASSO B3! */
-    background-image: url('https://raw.githubusercontent.com/ssaboyab/marketplace-biorama-prototipo/refs/heads/main/img/slide1.jpeg'), 
-                      url('https://raw.githubusercontent.com/ssaboyab/marketplace-biorama-prototipo/refs/heads/main/img/slide2.jpeg'), 
-                      url('https://raw.githubusercontent.com/ssaboyab/marketplace-biorama-prototipo/refs/heads/main/img/slide6.jpeg');
-    animation: slide-bg 15s infinite ease-in-out; /* Animação de 15s */
+    /* Configuração da Imagem */
+    background-image: url('https://www.canva.com/design/DAG7mvCESrM/OmkUId0SnwbDx9u44WPbbg/view?utm_content=DAG7mvCESrM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfc5184c4c2'); 
+    background-size: cover; /* Garante que a imagem cubra toda a área */
+    background-position: center; /* Centraliza a imagem no viewport */
+    background-repeat: no-repeat;
 }
 
-/* Animação que muda a posição da imagem de fundo para simular o slide */
-@keyframes slide-bg {
-    0% { background-position-x: 0%; }
-    33% { background-position-x: 50%; } /* Ponto 1 na animação */
-    66% { background-position-x: 100%; } /* Ponto 2 na animação */
-    100% { background-position-x: 0%; }
-}
-
-/* Faixa do Título e Logos */
-#faixa-topo {
-    position: relative;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.6); /* Faixa semi-transparente */
-    color: white;
-    padding: 20px 40px;
-    width: 80%;
-    border-radius: 10px;
-    display: flex;
-    /* Alinha logos e título no centro vertical */
-    justify-content: space-between;
-    align-items: center; 
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-/* Novo estilo para o bloco de texto (Duas Linhas) */
-#main-title {
-    text-align: center;
-}
-
-#main-title h1 {
-    margin: 0;
-    font-size: 3.5em;
-    color: #ffffff; /* Título principal agora em BRANCO */
-}
-
-#main-title p {
-    margin: 0;
-    font-size: 1.2em;
-    color: #ffffff; /* Subtítulo em BRANCO */
-    font-weight: normal;
-}
-
-/* Novo estilo para as logos (agora como imagens) */
-.logo-img {
-    height: 60px; /* Ajuste este valor (ex: 80px) se suas logos forem maiores/menores */
-    width: auto;
-    object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
-}
-
-#faixa-topo h1 {
-    margin: 0;
-    font-size: 3em;
-    color: #f0a300; 
-}
-
-.logo {
-    font-size: 1.2em;
-    color: #ffffff;
-}
-
-
-/* --- 3. FAIXA DE INTRODUÇÃO --- */
+/* --- 3. FAIXA DE INTRODUÇÃO (A faixa verde abaixo da Capa) --- */
 #intro-faixa {
-    background-color: #006400; 
+    background-color: #006400; /* Verde escuro */
     color: white;
     text-align: center;
     padding: 15px 0;
