@@ -11,7 +11,7 @@ function initMap() {
         center: centro,
     });
 
-    // Dados dos locais dos SAFs (O ponto de Mucambo foi removido)
+    // Dados dos locais dos SAFs (SAF Lapão adicionado)
     const saflocais = [
         // --- CORDOARIA ---
         { 
@@ -150,8 +150,16 @@ function initMap() {
             lng: -38.4094758, 
             info: "Tamanho: 400 m²",
             tipo: "Laranja, Goiaba, Acerola, Abacate, Feijão de porco e Margaridão"
+        },
+        
+        // --- NOVO SAF ---
+        {
+            nome: "Lapão - Novo SAF",
+            lat: -11.519167,
+            lng: -41.851250,
+            info: "Tamanho: 10000 m²", // 1 hectare
+            tipo: "Mamona, Feijão de porco e Girassol" // Espécies de exemplo, caso não tenha especificado
         }
-        // O SAF "Mucambo - Samuel" foi removido
     ];
 
     // Criação dos marcadores e InfoWindows
