@@ -3,7 +3,7 @@ body {
     font-family: 'Exo 2', sans-serif; /* NOVO: Aplica a fonte principal */
     margin: 0;
     padding: 0;
-    background-color: #cfd6c1; 
+    background-color: #cfd6c1 !important; 
     color: #333;
 }
 
@@ -22,7 +22,7 @@ section {
 }
 
 h2 {
-    color: #0c7a37; /* NOVO: Cor verde escura para todos os títulos */ 
+    color: #0c7a37; !important/ 
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 10px;
     margin-top: 0;
