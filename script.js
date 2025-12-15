@@ -11,7 +11,7 @@ function initMap() {
         center: centro,
     });
 
-    // Dados dos locais dos SAFs (SAF Lapão corrigido)
+    // Dados dos locais dos SAFs (SAF Lapão com nome "Jhonata")
     const saflocais = [
         // --- CORDOARIA ---
         { 
@@ -152,11 +152,10 @@ function initMap() {
             tipo: "Laranja, Goiaba, Acerola, Abacate, Feijão de porco e Margaridão"
         },
         
-        // --- SAF LAPÃO (Corrigido) ---
-        // Guardião: (Vazio para mostrar apenas "SAF Lapão" no título)
-        // Espécies: "Misto" para que o campo não apareça.
+        // --- SAF LAPÃO (Corrigido para SAF Jhonata) ---
         {
-            nome: "Lapão - ",
+            // O formato é "Comunidade - Guardião" para extração no InfoWindow
+            nome: "Lapão - Jhonata",
             lat: -11.519167, // Convertido de 11º31'09.0"S
             lng: -41.851250, // Convertido de 41º51'04.5"W
             info: "Tamanho: 10000 m²", // 1 hectare
@@ -166,11 +165,11 @@ function initMap() {
 
     // Criação dos marcadores e InfoWindows
     saflocais.forEach(local => {
-        // Extrai Guardião e Comunidade do nome (ex: "Cordaria - Darlu")
+        // Extrai Guardião e Comunidade do nome (ex: "Lapão - Jhonata")
         const parts = local.nome.split(' - ');
         const comunidade = parts[0];
         
-        // Garante que o guardião seja uma string vazia se não existir na entrada
+        // Se a segunda parte existir, é o guardião; se não (como em "Lapão - "), será string vazia
         const guardiao = parts.length > 1 ? parts[1].trim() : '';
         
         let especiesHtml = '';
@@ -203,7 +202,7 @@ function initMap() {
         
         // Montagem final do InfoWindow no formato solicitado
         const infowindow = new google.maps.InfoWindow({
-            // Se guardiao estiver vazio, o título será apenas "SAF Lapão" (SAF )
+            // O título usará "Jhonata"
             content: `<h3>SAF ${guardiao}</h3>
                       <p><strong>- Comunidade:</strong> ${comunidade}</p>
                       <p><strong>- Área:</strong> ${local.info.replace('Tamanho: ', '')}</p>
