@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', calcularArea);
 
 
 // ===================================================================
-// 3. LÓGICA DO FORMULÁRIO DE PEDIDOS (Sem alterações)
+// 3. LÓGICA DO FORMULÁRIO DE PEDIDOS (AJUSTADO PARA LIMPEZA E FEEDBACK)
 // ===================================================================
 
 /**
@@ -268,18 +268,34 @@ function mostrarFormulario(event) {
 }
 
 /**
- * Simula o envio do orçamento: esconde o formulário e exibe a mensagem de sucesso.
+ * Simula o envio do orçamento: limpa o formulário e exibe a mensagem de sucesso.
  */
 function enviarOrçamento(event) {
-    event.preventDefault(); 
-
+    event.preventDefault(); // Impede o envio real do formulário
+    
     const form = document.getElementById('formulario-pedido');
     
+    // Verifica se a validação do HTML foi bem-sucedida
     if (form.checkValidity()) {
-        form.style.display = 'none';
-        document.getElementById('pedido-existente').style.display = 'none';
-        document.getElementById('mensagem-sucesso').style.display = 'block';
-        form.reset();
         
+        // 1. Esconde o formulário
+        form.style.display = 'none';
+
+        // 2. Esconde o pedido existente (se estiver visível)
+        document.getElementById('pedido-existente').style.display = 'none'; 
+
+        // 3. Limpa o formulário (faz os campos preenchidos sumirem)
+        form.reset(); 
+        
+        // 4. Mostra a mensagem de sucesso
+        document.getElementById('mensagem-sucesso').style.display = 'block';
+        
+        // 5. Opcional: Mostra novamente o botão para "Fazer novo pedido" (se necessário)
+        // document.getElementById('btn-novo-pedido').style.display = 'block';
+
+    } else {
+        // Se a validação do HTML falhar (campos obrigatórios vazios),
+        // o navegador já deve mostrar a mensagem de erro padrão.
+        form.reportValidity(); // Força a exibição da mensagem de erro de validação
     }
 }
