@@ -3,31 +3,163 @@
 // ===================================================================
 
 function initMap() {
-    // Coordenadas centrais (Exemplo: Salvador, BA)
-    const centro = { lat: -12.9714, lng: -38.5014 }; 
+    // Coordenadas centrais (Exemplo: Centro aproximado das localizações)
+    const centro = { lat: -12.30, lng: -38.50 }; 
     
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 7,
+        zoom: 9, // Ajustado para zoom maior para ver as marcações
         center: centro,
     });
 
-    // Dados dos locais dos SAFs
+    // Dados dos locais dos SAFs (Extraídos da sua tabela)
     const saflocais = [
+        // --- CORDOARIA ---
         { 
-            nome: "Fazenda Lapão", 
-            lat: -10.9700, 
-            lng: -41.7600, 
-            info: "Família Silva: 5.000m² de SAF. Sequestro de 10t de CO2/ano.",
-            tipo: "Mamona e Mandioca"
+            nome: "Cordaria - Darlu", 
+            lat: -12.799459, 
+            lng: -38.304533, 
+            info: "Tamanho: 200 m²",
+            tipo: "Misto (Detalhes não fornecidos)"
         },
         { 
-            nome: "Comunidade Camaçari", 
-            lat: -12.6900, 
-            lng: -38.3200, 
-            info: "Família Oliveira: 10.000m² de SAF. Biodiversidade em alta.",
-            tipo: "Cacau, Banana e Mamona"
+            nome: "Cordaria - Bispo", 
+            lat: -12.7599453, 
+            lng: -38.3074372, 
+            info: "Tamanho: 300 m²",
+            tipo: "Misto (Detalhes não fornecidos)"
         },
-        // Você deve ter 19 SAFs no total!
+        { 
+            nome: "Cordaria - Jamile", 
+            lat: -12.8089731, 
+            lng: -38.3133169, 
+            info: "Tamanho: 300 m²",
+            tipo: "Misto (Detalhes não fornecidos)"
+        },
+        { 
+            nome: "Cordaria - Jace", 
+            lat: -12.8126054, 
+            lng: -38.3141604, 
+            info: "Tamanho: 300 m²",
+            tipo: "Misto (Detalhes não fornecidos)"
+        },
+        { 
+            nome: "Cordaria - Angelica", 
+            lat: -12.8116041, 
+            lng: -38.3147002, 
+            info: "Tamanho: 300 m²",
+            tipo: "Misto (Detalhes não fornecidos)"
+        },
+        { 
+            nome: "Cordaria - Manoel", 
+            lat: -12.8108194, 
+            lng: -38.3147016, 
+            info: "Tamanho: 600 m²",
+            tipo: "Goiaba, Caju, Manga, Acerola, Pitaiá, Mamão, Mandioca, Urucum, Cacau, Abacaxi, Jaca e Graviola"
+        },
+        { 
+            nome: "Cordaria - Constancia", 
+            lat: -12.8105692, 
+            lng: -38.3237224, 
+            info: "Tamanho: 400 m²",
+            tipo: "Misto (Detalhes não fornecidos)"
+        },
+        { 
+            nome: "Cordaria - Barbara", 
+            lat: -12.8106174, 
+            lng: -38.3134437, 
+            info: "Tamanho: 400 m²",
+            tipo: "Misto (Detalhes não fornecidos)"
+        },
+        { 
+            nome: "Cordaria - Deny", 
+            lat: -12.8106148, 
+            lng: -38.3182000, 
+            info: "Tamanho: 300 m²",
+            tipo: "Misto (Detalhes não fornecidos)"
+        },
+        { 
+            nome: "Cordaria - Livia", 
+            lat: -12.8247802, 
+            lng: -38.3143078, 
+            info: "Tamanho: 300 m²",
+            tipo: "Misto (Detalhes não fornecidos)"
+        },
+        { 
+            nome: "Cordaria - Juse", 
+            lat: -12.8021446, 
+            lng: -38.3111278, 
+            info: "Tamanho: 300 m²",
+            tipo: "Misto (Detalhes não fornecidos)"
+        },
+
+        // --- CATUZINHO ---
+        { 
+            nome: "Catuzinho - Simone", 
+            lat: -12.0478003, 
+            lng: -38.4333150, 
+            info: "Tamanho: 400 m²",
+            tipo: "Cajueiro, Graviola, Goiaba, Laranja, Bananeira, Feijão de Porco e Mamona"
+        },
+        { 
+            nome: "Catuzinho - Cosme", 
+            lat: -12.0462710, 
+            lng: -38.4324518, 
+            info: "Tamanho: 400 m²",
+            tipo: "Cajueiro, Mangueira, Graviola, Bananeira, Eucalipto, Maracandã, Feijão de Porco, Maracuja, Acerola, Abacaxi e Goiaba"
+        },
+        { 
+            nome: "Catuzinho - Damião", 
+            lat: -12.0465150, 
+            lng: -38.4325958, 
+            info: "Tamanho: 500 m²",
+            tipo: "Misto (Detalhes não fornecidos)"
+        },
+        { 
+            nome: "Catuzinho - Welves", 
+            lat: -12.0453708, 
+            lng: -38.4326767, 
+            info: "Tamanho: 400 m²",
+            tipo: "Limão, Graviola, Goiaba, Laranja, Bananeira, Feijão de Porco e Mamona"
+        },
+        { 
+            nome: "Catuzinho - Marilene", 
+            lat: -12.0459990, 
+            lng: -38.4316231, 
+            info: "Tamanho: 400 m²",
+            tipo: "Manga, abacate, sapota, mamona, feijão de porco, laranja e coqueiro"
+        },
+        { 
+            nome: "Catuzinho - Nailana", 
+            lat: -12.0477707, 
+            lng: -38.4340731, 
+            info: "Tamanho: 300 m²",
+            tipo: "Misto (Detalhes não fornecidos)"
+        },
+
+        // --- TOP VERDE ---
+        { 
+            nome: "Top Verde - Ana Cristina", 
+            lat: -12.3215555, 
+            lng: -38.4348731, 
+            info: "Tamanho: 600 m²",
+            tipo: "Bananeira, Goiaba, Manga, Ciriguela, Caju, Abacate, Atemoiá, Coqueiro, Urucum, Feijão andu, Mamona e Feijão de porco"
+        },
+        { 
+            nome: "Top Verde - Jose Miranda", 
+            lat: -12.3124802, 
+            lng: -38.4094758, 
+            info: "Tamanho: 400 m²",
+            tipo: "Laranja, Goiaba, Acerola, Abacate, Feijão de porco e Margaridão"
+        },
+        
+        // --- MUCAMBO ---
+        { 
+            nome: "Mucambo - Samuel", 
+            lat: -11.6107757, 
+            lng: -37.0510404, 
+            info: "Tamanho: 300 m²",
+            tipo: "Manga, Abacate, Ciriguela, Caju, Pincan, Goiaba, Bananeira, Feijão de porco e Mamona"
+        }
     ];
 
     // Criação dos marcadores e InfoWindows
@@ -35,7 +167,7 @@ function initMap() {
         const infowindow = new google.maps.InfoWindow({
             content: `<h3>${local.nome}</h3>
                       <p><strong>Tipo:</strong> ${local.tipo}</p>
-                      <p>${local.info}</p>`
+                      <p><strong>Tamanho:</strong> ${local.info}</p>`
         });
 
         const marker = new google.maps.Marker({
@@ -52,7 +184,7 @@ function initMap() {
 }
 
 // ===================================================================
-// 2. LÓGICA DA CALCULADORA
+// 2. LÓGICA DA CALCULADORA (Sem alterações)
 // ===================================================================
 
 function calcularArea() {
@@ -86,22 +218,17 @@ document.addEventListener('DOMContentLoaded', calcularArea);
 
 
 // ===================================================================
-// 3. LÓGICA DO FORMULÁRIO DE PEDIDOS
+// 3. LÓGICA DO FORMULÁRIO DE PEDIDOS (Sem alterações)
 // ===================================================================
 
 /**
  * Mostra o formulário de novo pedido e esconde o link.
  */
 function mostrarFormulario(event) {
-    event.preventDefault(); // Impede que o link vá para o topo da página
+    event.preventDefault(); 
     
-    // Mostra o formulário de pedido
     document.getElementById('formulario-pedido').style.display = 'block';
-    
-    // Esconde o link "Fazer novo pedido"
     document.getElementById('btn-novo-pedido').style.display = 'none';
-
-    // Se houver uma mensagem de sucesso, garante que ela esteja escondida
     document.getElementById('mensagem-sucesso').style.display = 'none';
 }
 
@@ -109,26 +236,15 @@ function mostrarFormulario(event) {
  * Simula o envio do orçamento: esconde o formulário e exibe a mensagem de sucesso.
  */
 function enviarOrçamento(event) {
-    event.preventDefault(); // Impede o envio real do formulário (que recarregaria a página)
+    event.preventDefault(); 
 
     const form = document.getElementById('formulario-pedido');
     
-    // Validação básica (verifica se os campos obrigatórios foram preenchidos)
     if (form.checkValidity()) {
-        // 1. Esconde o formulário
         form.style.display = 'none';
-
-        // 2. Esconde o pedido existente (para focar no novo pedido)
         document.getElementById('pedido-existente').style.display = 'none';
-
-        // 3. Mostra a mensagem de sucesso
         document.getElementById('mensagem-sucesso').style.display = 'block';
-
-        // Opcional: Limpar o formulário para o próximo uso
         form.reset();
         
-    } else {
-        // Se a validação do HTML falhar (campos vazios)
-        // O navegador já dispara a mensagem de erro padrão
     }
 }
