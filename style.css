@@ -1,16 +1,10 @@
+/* --- 1. ESTILOS GERAIS --- */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6; /* Fundo suave */
+    background-color: #f4f7f6; 
     color: #333;
-}
-
-header {
-    background-color: #008000; /* Verde Floresta */
-    color: white;
-    padding: 20px;
-    text-align: center;
 }
 
 main {
@@ -28,22 +22,106 @@ section {
 }
 
 h2 {
-    color: #006400; /* Verde mais escuro */
+    color: #006400; 
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 10px;
     margin-top: 0;
 }
 
-/* Estilo específico para o MAPA */
+/* --- 2. ESTILOS DA ANTECAPA (HERO SECTION) --- */
+#hero-section {
+    position: relative;
+    /* 90vh significa 90% da altura visível da tela */
+    height: 90vh; 
+    overflow: hidden; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+}
+
+/* Camada das Fotos (Slide) */
+#slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.4); 
+    background-blend-mode: darken;
+    
+    /* VINCULAÇÃO DAS FOTOS: ESTA LINHA SERÁ MUDADA NO PASSO B3! */
+    background-image: url('LINK_DA_SUA_FOTO_1_AQUI'), 
+                      url('LINK_DA_SUA_FOTO_2_AQUI'), 
+                      url('LINK_DA_SUA_FOTO_3_AQUI');
+    animation: slide-bg 15s infinite ease-in-out; /* Animação de 15s */
+}
+
+/* Animação que muda a posição da imagem de fundo para simular o slide */
+@keyframes slide-bg {
+    0% { background-position-x: 0%; }
+    33% { background-position-x: 50%; } /* Ponto 1 na animação */
+    66% { background-position-x: 100%; } /* Ponto 2 na animação */
+    100% { background-position-x: 0%; }
+}
+
+/* Faixa do Título e Logos */
+#faixa-topo {
+    position: relative;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: white;
+    padding: 20px 40px;
+    width: 80%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#faixa-topo h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #f0a300; 
+}
+
+.logo {
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+
+/* --- 3. FAIXA DE INTRODUÇÃO --- */
+#intro-faixa {
+    background-color: #006400; 
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-bottom: 0; 
+    border-radius: 0;
+}
+
+#intro-faixa h2 {
+    margin: 0;
+    font-size: 1.5em;
+    border-bottom: none;
+    color: white;
+}
+
+/* --- 4. ESTILOS DO CONTEÚDO PRINCIPAL (Mapa, Calculadora, etc.) --- */
+
 #map {
-    height: 400px; /* Altura que o mapa vai ocupar */
+    height: 400px; 
     width: 100%;
     margin-top: 20px;
     border-radius: 6px;
     border: 1px solid #ccc;
 }
 
-/* Estilo para a Calculadora */
+/* Estilos de Calculadora, Simulação e Selo... (manter o restante) */
 #calculadora-secao label, #calculadora-secao input, #calculadora-secao button {
     font-size: 16px;
     padding: 10px;
@@ -53,7 +131,7 @@ h2 {
 }
 
 #calculadora-secao button {
-    background-color: #f0a300; /* Laranja/Amarelo da Mamona/Macaúba */
+    background-color: #f0a300; 
     color: white;
     cursor: pointer;
     border: none;
@@ -71,7 +149,6 @@ h2 {
     border-radius: 4px;
 }
 
-/* Estilo para a Simulação de Compra */
 .bloco-simulacao {
     padding: 15px;
     border: 1px solid #ddd;
@@ -79,11 +156,17 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* Estilo para o Selo */
 #selo-amigo {
     text-align: center;
-    background-color: #e6ffe6; /* Fundo verde bem clarinho */
+    background-color: #e6ffe6; 
     padding: 20px;
     border-radius: 8px;
     margin-top: 30px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #666;
+    font-size: 0.9em;
 }
