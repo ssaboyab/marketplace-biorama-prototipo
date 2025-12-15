@@ -43,13 +43,43 @@
         
         <section id="simulacao-compra">
             <h2>Simulação de Encomenda</h2>
-            <div class="bloco-simulacao">
+            
+            <div class="bloco-simulacao" id="pedido-existente">
                 <h3>Pedido #2025-AF-101</h3>
                 <p>Produto: Óleo de Mamona - 1000L</p>
                 <p>Status: Encomenda a caminho! 🚚</p>
                 <progress value="75" max="100"></progress> 75% concluído.
             </div>
-            <p><a href="#">Fazer novo pedido</a></p>
+
+            <p><a href="#" id="btn-novo-pedido" onclick="mostrarFormulario(event)">Fazer novo pedido</a></p>
+            
+            <form id="formulario-pedido" style="display:none; margin-top: 20px;">
+                <h3>Solicitar Novo Orçamento</h3>
+
+                <label for="nome-representante">Nome e contato do representante:</label>
+                <input type="text" id="nome-representante" required>
+
+                <label for="empresa-cnpj">Empresa e CNPJ:</label>
+                <input type="text" id="empresa-cnpj" required>
+
+                <label for="endereco-entrega">Endereço de entrega:</label>
+                <input type="text" id="endereco-entrega" required>
+
+                <label for="quantidade">Quantidade (em litros de óleo):</label>
+                <input type="number" id="quantidade" min="100" required>
+
+                <label for="prazo-pretendido">Prazo pretendido para entrega:</label>
+                <input type="text" id="prazo-pretendido" placeholder="Ex: 45 dias após aprovação do orçamento" required>
+
+                <button type="submit" onclick="enviarOrçamento(event)">Solicitar orçamento</button>
+            </form>
+            
+            <div id="mensagem-sucesso" style="display:none; text-align: center; padding: 20px; border: 1px solid #0c7a37; background-color: #e6f5e6;">
+                <h3>Orçamento solicitado!</h3>
+                <p>Seu pedido foi enviado com sucesso. Entraremos em contato em breve para confirmar os detalhes.</p>
+                <p>Obrigado pelo seu interesse em produtos da agricultura de baixo carbono!</p>
+            </div>
+
         </section>
         
     </main>

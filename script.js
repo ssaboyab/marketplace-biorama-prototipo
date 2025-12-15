@@ -454,3 +454,47 @@ function calcularArea() {
 
 // Inicializa a calculadora com o valor padrão quando a página carrega
 document.addEventListener('DOMContentLoaded', calcularArea);
+// ===================================================================
+// 4. LÓGICA DO FORMULÁRIO DE PEDIDOS (Novo!)
+// ===================================================================
+
+/**
+ * Mostra o formulário de novo pedido e esconde o link.
+ */
+function mostrarFormulario(event) {
+    event.preventDefault(); // Impede que o link vá para o topo da página
+    
+    // Mostra o formulário de pedido
+    document.getElementById('formulario-pedido').style.display = 'block';
+    
+    // Esconde o link "Fazer novo pedido"
+    document.getElementById('btn-novo-pedido').style.display = 'none';
+
+    // Se houver uma mensagem de sucesso, garante que ela esteja escondida
+    document.getElementById('mensagem-sucesso').style.display = 'none';
+}
+
+/**
+ * Simula o envio do orçamento: esconde o formulário e exibe a mensagem de sucesso.
+ */
+function enviarOrçamento(event) {
+    event.preventDefault(); // Impede o envio real do formulário (que recarregaria a página)
+
+    const form = document.getElementById('formulario-pedido');
+    
+    // Validação básica (verifica se os campos obrigatórios foram preenchidos)
+    if (form.checkValidity()) {
+        // 1. Esconde o formulário
+        form.style.display = 'none';
+
+        // 2. Esconde o pedido existente (para focar no novo pedido)
+        document.getElementById('pedido-existente').style.display = 'none';
+
+        // 3. Mostra a mensagem de sucesso
+        document.getElementById('mensagem-sucesso').style.display = 'block';
+    } else {
+        // Se a validação do HTML falhar (campos vazios),
+        // o navegador mostrará a mensagem de erro padrão.
+        alert('Por favor, preencha todos os campos obrigatórios do formulário.');
+    }
+}
