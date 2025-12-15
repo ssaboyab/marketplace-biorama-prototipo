@@ -53,9 +53,9 @@ h2 {
     background-blend-mode: darken;
     
     /* VINCULAÇÃO DAS FOTOS: ESTA LINHA SERÁ MUDADA NO PASSO B3! */
-    background-image: url('LINK_DA_SUA_FOTO_1_AQUI'), 
-                      url('LINK_DA_SUA_FOTO_2_AQUI'), 
-                      url('LINK_DA_SUA_FOTO_3_AQUI');
+    background-image: url('https://raw.githubusercontent.com/ssaboyab/marketplace-biorama-prototipo/refs/heads/main/img/slide1.jpeg'), 
+                      url('https://raw.githubusercontent.com/ssaboyab/marketplace-biorama-prototipo/refs/heads/main/img/slide2.jpeg'), 
+                      url('https://raw.githubusercontent.com/ssaboyab/marketplace-biorama-prototipo/refs/heads/main/img/slide6.jpeg');
     animation: slide-bg 15s infinite ease-in-out; /* Animação de 15s */
 }
 
