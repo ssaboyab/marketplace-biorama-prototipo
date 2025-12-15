@@ -169,10 +169,32 @@ function initMap() {
         const comunidade = parts[0];
         const guardiao = parts[1];
         
-        // Conteúdo Condicional de Espécies
         let especiesHtml = '';
+        
         if (local.tipo !== "Misto (Detalhes não fornecidos)") {
-            especiesHtml = `<p><strong>- Espécies plantadas:</strong> ${local.tipo}</p>`;
+            const especiePrincipal = "Mamona";
+            
+            // 1. Divide a string de espécies em um array
+            let especiesArray = local.tipo.split(',').map(s => s.trim());
+            
+            // 2. Procura e remove a Mamona da lista (se existir)
+            const mamonaIndex = especiesArray.findIndex(
+                especie => especie.toLowerCase().includes(especiePrincipal.toLowerCase())
+            );
+
+            if (mamonaIndex !== -1) {
+                // Remove a Mamona da posição atual
+                const mamona = especiesArray.splice(mamonaIndex, 1)[0];
+                
+                // 3. Adiciona a Mamona no começo do array
+                especiesArray.unshift(mamona);
+            }
+            
+            // 4. Recria a string de espécies formatada
+            const especiesFormatadas = especiesArray.join(', ');
+            
+            // Monta o HTML com as espécies formatadas
+            especiesHtml = `<p><strong>- Espécies plantadas:</strong> ${especiesFormatadas}</p>`;
         }
         
         // Montagem final do InfoWindow no formato solicitado
