@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    *Mantenha também a referência do CSS que está funcionando agora (seja `style.css` ou `main.css`).*
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biorama - Panorama de Sistemas Agroflorestais</title>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="style.css">
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2U67EQFqe7OhCYfGfoau9HNQfSD3KQr0&callback=initMap" async defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biorama - Panorama de Sistemas Agroflorestais</title>
+    
+    <style>
+        /* Regras Críticas para Títulos e Fundo */
+        body {
+            background-color: #cfd6c1 !important; /* Seu Fundo Claro */
+        }
+        main {
+            background-color: #cfd6c1 !important; 
+        }
+        h2 {
+            color: #0c7a37 !important; /* Seu Título Verde */
+        }
+        /* Impedindo a cor branca de vazar do banner */
+        #intro-faixa h2 {
+            color: #ffffff !important; 
+        }
+    </style>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="main.css"> 
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API_AQUI&callback=initMap" async defer></script>
 </head>
 <body>
 
     <section id="capa-estatica">
-        </section>
+    </section>
 
     <section id="intro-faixa">
-        <h2>ORIGEM FAMILIAR COM ESCALA INDUSTRIAL</h2>
-    
-        <section id="impacto-secao">
+        <h2>origem familiar com escala industrial</h2>
+    </section>
+
+    <section id="impacto-secao">
         <h2 class="impacto-titulo">Impacto do Renova Mamona (até abr./2025)</h2>
         <div class="resultados-container">
             <div class="resultado-item">
@@ -30,11 +50,11 @@
             </div>
         </div>
     </section>
-
+    
     <main>
         <section id="mapa-secao">
             <h2>Áreas de Produção Agroflorestal</h2>
-            <p>Explore o mapa para conhecer nossas áreas!</p>
+            <p>Clique nas bandeirinhas para ver as famílias e o impacto ambiental!</p>
             <div id="map"></div>
         </section>
 
@@ -49,7 +69,7 @@
             <div id="resultado-calculadora">
                 <p>Para <span id="litros-output">1000</span> litros, você precisa investir em:</p>
                 <h3> <span id="area-output">5000</span> m² de Agrofloresta</h3>
-                <p>💨 Isso ajuda a sequestrar o CO² equivalente a tirar <span id="carbono-output">20</span> carros da rua por um mês! (Estimativa)</p>
+                <p>💨 Isso ajuda a sequestrar o CO2 equivalente a tirar <span id="carbono-output">20</span> carros da rua por um mês! (Estimativa)</p>
             </div>
         </section>
         
@@ -70,32 +90,27 @@
             <form id="formulario-pedido" style="display:none; margin-top: 20px;">
                 <h3>Solicitar Novo Orçamento</h3>
 
-                <label for="nome-representante">Nome e contato do representante:</label>
+                <label for="nome-representante">Nome e Sobrenome do Representante:</label>
                 <input type="text" id="nome-representante" required>
-
                 <label for="empresa-cnpj">Empresa e CNPJ:</label>
                 <input type="text" id="empresa-cnpj" required>
-
-                <label for="endereco-entrega">Endereço de entrega:</label>
+                <label for="endereco-entrega">Endereço de Entrega:</label>
                 <input type="text" id="endereco-entrega" required>
-
                 <label for="quantidade">Quantidade (em litros de óleo):</label>
                 <input type="number" id="quantidade" min="100" required>
-
-                <label for="prazo-pretendido">Prazo pretendido para entrega:</label>
+                <label for="prazo-pretendido">Prazo Pretendido para Entrega:</label>
                 <input type="text" id="prazo-pretendido" placeholder="Ex: 45 dias após aprovação do orçamento" required>
 
                 <button type="submit" onclick="enviarOrçamento(event)">Solicitar orçamento</button>
             </form>
             
             <div id="mensagem-sucesso" style="display:none; text-align: center; padding: 20px; border: 1px solid #0c7a37; background-color: #e6f5e6;">
-                <h3>Orçamento solicitado!</h3>
+                <h3>🎉 Orçamento Solicitado!</h3>
                 <p>Seu pedido foi enviado com sucesso. Entraremos em contato em breve para confirmar os detalhes.</p>
-                <p>Obrigado pelo seu interesse em produtos da agricultura de baixo carbono!</p>
+                <p>Obrigado pelo seu interesse em produtos Agroflorestais!</p>
             </div>
 
         </section>
-        
     </main>
 
     <footer>
