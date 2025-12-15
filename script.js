@@ -11,7 +11,7 @@ function initMap() {
         center: centro,
     });
 
-    // Dados dos locais dos SAFs (Extraídos da sua tabela)
+    // Dados dos locais dos SAFs (O ponto de Mucambo foi removido)
     const saflocais = [
         // --- CORDOARIA ---
         { 
@@ -150,16 +150,8 @@ function initMap() {
             lng: -38.4094758, 
             info: "Tamanho: 400 m²",
             tipo: "Laranja, Goiaba, Acerola, Abacate, Feijão de porco e Margaridão"
-        },
-        
-        // --- MUCAMBO ---
-        { 
-            nome: "Mucambo - Samuel", 
-            lat: -11.6107757, 
-            lng: -37.0510404, 
-            info: "Tamanho: 300 m²",
-            tipo: "Manga, Abacate, Ciriguela, Caju, Pincan, Goiaba, Bananeira, Feijão de porco e Mamona"
         }
+        // O SAF "Mucambo - Samuel" foi removido
     ];
 
     // Criação dos marcadores e InfoWindows
@@ -253,7 +245,7 @@ document.addEventListener('DOMContentLoaded', calcularArea);
 
 
 // ===================================================================
-// 3. LÓGICA DO FORMULÁRIO DE PEDIDOS (AJUSTADO PARA LIMPEZA E FEEDBACK)
+// 3. LÓGICA DO FORMULÁRIO DE PEDIDOS 
 // ===================================================================
 
 /**
@@ -290,9 +282,6 @@ function enviarOrçamento(event) {
         // 4. Mostra a mensagem de sucesso
         document.getElementById('mensagem-sucesso').style.display = 'block';
         
-        // 5. Opcional: Mostra novamente o botão para "Fazer novo pedido" (se necessário)
-        // document.getElementById('btn-novo-pedido').style.display = 'block';
-
     } else {
         // Se a validação do HTML falhar (campos obrigatórios vazios),
         // o navegador já deve mostrar a mensagem de erro padrão.
