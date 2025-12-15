@@ -164,10 +164,23 @@ function initMap() {
 
     // Criação dos marcadores e InfoWindows
     saflocais.forEach(local => {
+        // Extrai Guardião e Comunidade do nome (ex: "Cordaria - Darlu")
+        const parts = local.nome.split(' - ');
+        const comunidade = parts[0];
+        const guardiao = parts[1];
+        
+        // Conteúdo Condicional de Espécies
+        let especiesHtml = '';
+        if (local.tipo !== "Misto (Detalhes não fornecidos)") {
+            especiesHtml = `<p><strong>- Espécies plantadas:</strong> ${local.tipo}</p>`;
+        }
+        
+        // Montagem final do InfoWindow no formato solicitado
         const infowindow = new google.maps.InfoWindow({
-            content: `<h3>${local.nome}</h3>
-                      <p><strong>Tipo:</strong> ${local.tipo}</p>
-                      <p><strong>Tamanho:</strong> ${local.info}</p>`
+            content: `<h3>SAF ${guardiao}</h3>
+                      <p><strong>- Comunidade:</strong> ${comunidade}</p>
+                      <p><strong>- Área:</strong> ${local.info.replace('Tamanho: ', '')}</p>
+                      ${especiesHtml}`
         });
 
         const marker = new google.maps.Marker({
