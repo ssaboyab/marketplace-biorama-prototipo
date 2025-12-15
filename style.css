@@ -1,9 +1,9 @@
 /* --- 1. ESTILOS GERAIS --- */
 body {
-    font-family: 'Exo 2', sans-serif; /* NOVO: Aplica a fonte principal */
+    font-family: 'Exo 2', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #cfd6c1; 
+    background-color: #cfd6c1; /* Fundo: #cfd6c1 (CORRETO) */
     color: #333;
 }
 
@@ -22,28 +22,36 @@ section {
 }
 
 h2 {
-    color: #0c7a37; /* NOVO: Cor verde escura para todos os títulos */ 
+    color: #0c7a37; /* Títulos Gerais: #0c7a37 (CORRETO) */ 
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 10px;
     margin-top: 0;
 }
 
+/* CORREÇÃO CRÍTICA: Forçando a cor verde escura nos títulos principais */
+/* Isso garante que a cor #0c7a37 seja aplicada a todos os h2 dentro da área principal */
+main h2 {
+    color: #0c7a37 !important; 
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+
 /* --- 2. ESTILOS DA ANTECAPA SIMPLIFICADA --- */
 #capa-estatica {
-    /* Altura: 90vh significa 90% da altura visível da tela, cobrindo quase tudo */
     height: 90vh; 
     width: 100%;
-    
-    /* Configuração da Imagem */
+    /* Mantenha o link da sua imagem hospedada aqui (Exemplo: https://i.imgur.com/wEjRMp1.jpeg) */
     background-image: url('https://i.imgur.com/wEjRMp1.jpeg'); 
-    background-size: cover; /* Garante que a imagem cubra toda a área */
-    background-position: center; /* Centraliza a imagem no viewport */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
 /* --- 3. FAIXA DE INTRODUÇÃO --- */
 #intro-faixa {
-    background-color: #0c7a37; /* NOVO: Cor verde escura sólida */
+    background-color: #0c7a37; /* Faixa: #0c7a37 (CORRETO) */
     color: white;
     text-align: center;
     padding: 15px 0;
@@ -55,20 +63,21 @@ h2 {
     margin: 0;
     font-size: 1.5em;
     border-bottom: none;
-    color: #ffffff; /* NOVO: Cor branca */
-    font-family: 'Exo 2', sans-serif; /* NOVO: Aplica a fonte Exo 2 */
-    text-transform: uppercase; /* NOVO: Força o texto para MAIÚSCULAS */
+    color: #ffffff; /* Letras da Faixa: #ffffff (CORRETO) */
+    font-family: 'Exo 2', sans-serif;
+    text-transform: uppercase; 
 }
+
 /* --- 3.5. ESTILOS DA SEÇÃO DE IMPACTO (NOVA) --- */
 #impacto-secao {
-    background-color: #ffffff; /* Fundo branco para contraste com o cinza do body */
+    background-color: #ffffff;
     padding: 30px 5%;
     text-align: center;
-    border-bottom: 5px solid #0c7a37; /* Linha verde separadora (SEU VERDE) */
+    border-bottom: 5px solid #0c7a37;
 }
 
 .impacto-titulo {
-    color: #0c7a37; /* Título principal na cor verde (SEU VERDE) */
+    color: #0c7a37; /* Título do Impacto: #0c7a37 (CORRETO) */
     font-size: 1.8em;
     font-weight: 700;
     margin-bottom: 25px;
@@ -88,7 +97,6 @@ h2 {
     flex: 1; 
     max-width: 400px;
     padding: 20px;
-    /* Linha de destaque lateral na cor clara (#cfd6c1) */
     border-left: 3px solid #cfd6c1; 
     text-align: left;
 }
@@ -103,7 +111,7 @@ h2 {
 .resultado-item p {
     font-size: 1.2em;
     font-weight: bold;
-    color: #0c7a37; /* Texto de destaque na cor verde (SEU VERDE) */
+    color: #0c7a37; /* Texto de Destaque do Impacto: #0c7a37 (CORRETO) */
     line-height: 1.4;
 }
 
@@ -124,7 +132,6 @@ h2 {
     border: 1px solid #ccc;
 }
 
-/* Estilos de Calculadora, Simulação e Selo... (manter o restante) */
 #calculadora-secao label, #calculadora-secao input, #calculadora-secao button {
     font-size: 16px;
     padding: 10px;
@@ -159,14 +166,6 @@ h2 {
     margin-bottom: 10px;
 }
 
-#selo-amigo {
-    text-align: center;
-    background-color: #e6ffe6; 
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 30px;
-}
-
 footer {
     text-align: center;
     padding: 15px;
@@ -189,7 +188,7 @@ footer {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Garante que padding não estoure o width */
+    box-sizing: border-box;
 }
 
 #formulario-pedido button[type="submit"] {
