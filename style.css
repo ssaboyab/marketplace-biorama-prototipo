@@ -71,15 +71,41 @@ h2 {
 #faixa-topo {
     position: relative;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.6); 
+    background-color: rgba(0, 0, 0, 0.6); /* Faixa semi-transparente */
     color: white;
     padding: 20px 40px;
     width: 80%;
     border-radius: 10px;
     display: flex;
+    /* Alinha logos e título no centro vertical */
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Novo estilo para o bloco de texto (Duas Linhas) */
+#main-title {
+    text-align: center;
+}
+
+#main-title h1 {
+    margin: 0;
+    font-size: 3.5em;
+    color: #ffffff; /* Título principal agora em BRANCO */
+}
+
+#main-title p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #ffffff; /* Subtítulo em BRANCO */
+    font-weight: normal;
+}
+
+/* Novo estilo para as logos (agora como imagens) */
+.logo-img {
+    height: 60px; /* Ajuste este valor (ex: 80px) se suas logos forem maiores/menores */
+    width: auto;
+    object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
 }
 
 #faixa-topo h1 {
