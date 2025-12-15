@@ -61,16 +61,16 @@ h2 {
 }
 /* --- 3.5. ESTILOS DA SEÇÃO DE IMPACTO (NOVA) --- */
 #impacto-secao {
-    background-color: #ffffff; /* Fundo branco ou claro */
+    background-color: #ffffff; /* Fundo branco para contraste com o cinza do body */
     padding: 30px 5%;
     text-align: center;
-    border-bottom: 5px solid #0c7a37; /* Linha verde separadora */
+    border-bottom: 5px solid #0c7a37; /* Linha verde separadora (SEU VERDE) */
 }
 
 .impacto-titulo {
-    color: #0c7a37; /* Título principal na cor verde */
+    color: #0c7a37; /* Título principal na cor verde (SEU VERDE) */
     font-size: 1.8em;
-    font-weight: 700; /* Negrito */
+    font-weight: 700;
     margin-bottom: 25px;
     border-bottom: none;
     padding-bottom: 0;
@@ -78,17 +78,18 @@ h2 {
 
 .resultados-container {
     display: flex;
-    justify-content: center; /* Centraliza os blocos */
-    gap: 40px; /* Espaço entre os dois blocos de resultado */
+    justify-content: center;
+    gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
 }
 
 .resultado-item {
-    flex: 1; /* Permite que cada item ocupe espaço igual */
+    flex: 1; 
     max-width: 400px;
     padding: 20px;
-    border-left: 3px solid #cfd6c1; /* Linha de destaque lateral */
+    /* Linha de destaque lateral na cor clara (#cfd6c1) */
+    border-left: 3px solid #cfd6c1; 
     text-align: left;
 }
 
@@ -102,14 +103,14 @@ h2 {
 .resultado-item p {
     font-size: 1.2em;
     font-weight: bold;
-    color: #0c7a37;
+    color: #0c7a37; /* Texto de destaque na cor verde (SEU VERDE) */
     line-height: 1.4;
 }
 
-/* Ajuste para telas menores (responsividade) */
+/* Ajuste para telas menores */
 @media (max-width: 768px) {
     .resultados-container {
-        flex-direction: column; /* Empilha os resultados verticalmente */
+        flex-direction: column;
         gap: 20px;
     }
 }
