@@ -3,7 +3,7 @@ body {
     font-family: 'Exo 2', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #cfd6c1; /* Fundo: #cfd6c1 (CORRETO) */
+    background-color: #cfd6c1; /* Fundo Principal: #cfd6c1 (Claro) */
     color: #333;
 }
 
@@ -11,10 +11,11 @@ main {
     max-width: 1000px;
     margin: 20px auto;
     padding: 0 20px;
+    background-color: #cfd6c1; /* Garante que a área lateral ao conteúdo seja clara */
 }
 
 section {
-    background-color: white;
+    background-color: white; /* Conteúdo interno sempre branco para legibilidade */
     padding: 30px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -22,16 +23,7 @@ section {
 }
 
 h2 {
-    color: #0c7a37; /* Títulos Gerais: #0c7a37 (CORRETO) */ 
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-/* CORREÇÃO CRÍTICA: Forçando a cor verde escura nos títulos principais */
-/* Isso garante que a cor #0c7a37 seja aplicada a todos os h2 dentro da área principal */
-main h2 {
-    color: #0c7a37 !important; 
+    color: #0c7a37; /* Títulos Gerais: #0c7a37 (Verde Escuro) */ 
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 10px;
     margin-top: 0;
@@ -42,7 +34,7 @@ main h2 {
 #capa-estatica {
     height: 90vh; 
     width: 100%;
-    /* Mantenha o link da sua imagem hospedada aqui (Exemplo: https://i.imgur.com/wEjRMp1.jpeg) */
+    /* Mantenha o link da sua imagem hospedada aqui */
     background-image: url('https://i.imgur.com/wEjRMp1.jpeg'); 
     background-size: cover;
     background-position: center;
@@ -51,7 +43,7 @@ main h2 {
 
 /* --- 3. FAIXA DE INTRODUÇÃO --- */
 #intro-faixa {
-    background-color: #0c7a37; /* Faixa: #0c7a37 (CORRETO) */
+    background-color: #0c7a37; /* Faixa de Destaque: #0c7a37 (Verde Escuro) */
     color: white;
     text-align: center;
     padding: 15px 0;
@@ -63,12 +55,12 @@ main h2 {
     margin: 0;
     font-size: 1.5em;
     border-bottom: none;
-    color: #ffffff; /* Letras da Faixa: #ffffff (CORRETO) */
+    color: #ffffff; /* Letras da Faixa: #ffffff (Branco) */
     font-family: 'Exo 2', sans-serif;
     text-transform: uppercase; 
 }
 
-/* --- 3.5. ESTILOS DA SEÇÃO DE IMPACTO (NOVA) --- */
+/* --- 3.5. ESTILOS DA SEÇÃO DE IMPACTO --- */
 #impacto-secao {
     background-color: #ffffff;
     padding: 30px 5%;
@@ -77,7 +69,7 @@ main h2 {
 }
 
 .impacto-titulo {
-    color: #0c7a37; /* Título do Impacto: #0c7a37 (CORRETO) */
+    color: #0c7a37; /* Título do Impacto: #0c7a37 */
     font-size: 1.8em;
     font-weight: 700;
     margin-bottom: 25px;
@@ -111,7 +103,7 @@ main h2 {
 .resultado-item p {
     font-size: 1.2em;
     font-weight: bold;
-    color: #0c7a37; /* Texto de Destaque do Impacto: #0c7a37 (CORRETO) */
+    color: #0c7a37; /* Texto de Destaque do Impacto: #0c7a37 */
     line-height: 1.4;
 }
 
@@ -122,6 +114,7 @@ main h2 {
         gap: 20px;
     }
 }
+
 /* --- 4. ESTILOS DO CONTEÚDO PRINCIPAL (Mapa, Calculadora, etc.) --- */
 
 #map {
@@ -172,6 +165,7 @@ footer {
     color: #666;
     font-size: 0.9em;
 }
+
 /* --- ESTILOS DO NOVO FORMULÁRIO DE ORÇAMENTO --- */
 #formulario-pedido label {
     display: block;
