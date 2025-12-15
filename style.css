@@ -57,7 +57,61 @@ h2 {
     border-bottom: none;
     color: #ffffff; /* NOVO: Cor branca */
     font-family: 'Exo 2', sans-serif; /* NOVO: Aplica a fonte Exo 2 */
-    text-transform: lowercase; /* NOVO: Garante minúsculas, por precaução */
+    text-transform: uppercase; /* NOVO: Força o texto para MAIÚSCULAS */
+}
+/* --- 3.5. ESTILOS DA SEÇÃO DE IMPACTO (NOVA) --- */
+#impacto-secao {
+    background-color: #ffffff; /* Fundo branco ou claro */
+    padding: 30px 5%;
+    text-align: center;
+    border-bottom: 5px solid #0c7a37; /* Linha verde separadora */
+}
+
+.impacto-titulo {
+    color: #0c7a37; /* Título principal na cor verde */
+    font-size: 1.8em;
+    font-weight: 700; /* Negrito */
+    margin-bottom: 25px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.resultados-container {
+    display: flex;
+    justify-content: center; /* Centraliza os blocos */
+    gap: 40px; /* Espaço entre os dois blocos de resultado */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.resultado-item {
+    flex: 1; /* Permite que cada item ocupe espaço igual */
+    max-width: 400px;
+    padding: 20px;
+    border-left: 3px solid #cfd6c1; /* Linha de destaque lateral */
+    text-align: left;
+}
+
+.resultado-item h3 {
+    color: #333;
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.resultado-item p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0c7a37;
+    line-height: 1.4;
+}
+
+/* Ajuste para telas menores (responsividade) */
+@media (max-width: 768px) {
+    .resultados-container {
+        flex-direction: column; /* Empilha os resultados verticalmente */
+        gap: 20px;
+    }
 }
 /* --- 4. ESTILOS DO CONTEÚDO PRINCIPAL (Mapa, Calculadora, etc.) --- */
 
