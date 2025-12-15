@@ -1,9 +1,9 @@
 /* --- 1. ESTILOS GERAIS --- */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Exo 2', sans-serif; /* NOVO: Aplica a fonte principal */
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6; 
+    background-color: #cfd6c1; 
     color: #333;
 }
 
@@ -22,7 +22,7 @@ section {
 }
 
 h2 {
-    color: #006400; 
+    color: #0c7a37; /* NOVO: Cor verde escura para todos os títulos */ 
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 10px;
     margin-top: 0;
@@ -41,9 +41,9 @@ h2 {
     background-repeat: no-repeat;
 }
 
-/* --- 3. FAIXA DE INTRODUÇÃO (A faixa verde abaixo da Capa) --- */
+/* --- 3. FAIXA DE INTRODUÇÃO --- */
 #intro-faixa {
-    background-color: #006400; /* Verde escuro */
+    background-color: #0c7a37; /* NOVO: Cor verde escura sólida */
     color: white;
     text-align: center;
     padding: 15px 0;
@@ -55,9 +55,10 @@ h2 {
     margin: 0;
     font-size: 1.5em;
     border-bottom: none;
-    color: white;
+    color: #ffffff; /* NOVO: Cor branca */
+    font-family: 'Exo 2', sans-serif; /* NOVO: Aplica a fonte Exo 2 */
+    text-transform: lowercase; /* NOVO: Garante minúsculas, por precaução */
 }
-
 /* --- 4. ESTILOS DO CONTEÚDO PRINCIPAL (Mapa, Calculadora, etc.) --- */
 
 #map {
