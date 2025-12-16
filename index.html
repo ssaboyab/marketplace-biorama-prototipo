@@ -36,7 +36,7 @@
     </section>
 
     <section id="impacto-secao">
-        <h2 class="impacto-titulo">Impacto do Renova Mamona (até abr./2025)</h2>
+        <h2 class="impacto-titulo">Impacto do Renova Mamona (até dez./2025)</h2>
         <div class="resultados-container">
             <div class="resultado-item">
                 <h3>Municípios Alcançados:</h3>
@@ -44,7 +44,9 @@
             </div>
             <div class="resultado-item">
                 <h3>Resultados Chave:</h3>
-                <p>20 SAFs, 15.000m², 7 comunidades</p>
+                <p>20.000 m² de Agrofloresta implantada</p>
+                <p>244kg de colheita de Mamona Agroflorestal</p>
+                <p>500 árvores estabelecidas</p>
             </div>
         </div>
     </section>
@@ -52,7 +54,7 @@
     <main>
         <section id="mapa-secao">
             <h2>Áreas de Produção Agroflorestal</h2>
-            <p>Clique nas bandeirinhas para ver as famílias e o impacto ambiental!</p>
+            <p>Explore o mapa para conhecer nossas áreas!</p>
             <div id="map"></div>
         </section>
 
@@ -61,13 +63,13 @@
         <section id="calculadora-secao">
             <h2>Calculadora de Investimento em Área</h2>
             <label for="litros">Quero comprar (em litros de óleo):</label>
-            <input type="number" id="litros" value="1000" min="100" placeholder="Ex: 5000">
+            <input type="number" id="litros" value="1000" min="000" placeholder="Ex: 5000">
             <button onclick="calcularArea()">Calcular</button>
 
             <div id="resultado-calculadora">
                 <p>Para <span id="litros-output">1000</span> litros, você precisa investir em:</p>
                 <h3> <span id="area-output">5000</span> m² de Agrofloresta</h3>
-                <p>💨 Isso ajuda a sequestrar o CO2 equivalente a tirar <span id="carbono-output">20</span> carros da rua por um mês! (Estimativa)</p>
+                <p> Isso ajuda a sequestrar o CO² equivalente a tirar <span id="carbono-output">20</span> carros da rua por um mês! (Estimativa)</p>
             </div>
         </section>
         
@@ -86,26 +88,26 @@
             <p><a href="#" id="btn-novo-pedido" onclick="mostrarFormulario(event)">Fazer novo pedido</a></p>
             
             <form id="formulario-pedido" style="display:none; margin-top: 20px;">
-                <h3>Solicitar Novo Orçamento</h3>
+                <h3>Fazer novo pedido</h3>
 
-                <label for="nome-representante">Nome e Sobrenome do Representante:</label>
+                <label for="nome-representante">Nome e contato do representante:</label>
                 <input type="text" id="nome-representante" required>
                 <label for="empresa-cnpj">Empresa e CNPJ:</label>
                 <input type="text" id="empresa-cnpj" required>
-                <label for="endereco-entrega">Endereço de Entrega:</label>
+                <label for="endereco-entrega">Endereço de entrega:</label>
                 <input type="text" id="endereco-entrega" required>
                 <label for="quantidade">Quantidade (em litros de óleo):</label>
                 <input type="number" id="quantidade" min="100" required>
-                <label for="prazo-pretendido">Prazo Pretendido para Entrega:</label>
+                <label for="prazo-pretendido">Prazo pretendido para entrega:</label>
                 <input type="text" id="prazo-pretendido" placeholder="Ex: 45 dias após aprovação do orçamento" required>
 
                 <button type="submit" onclick="enviarOrçamento(event)">Solicitar orçamento</button>
             </form>
             
             <div id="mensagem-sucesso" style="display:none; text-align: center; padding: 20px; border: 1px solid #0c7a37; background-color: #e6f5e6;">
-                <h3>🎉 Orçamento Solicitado!</h3>
+                <h3> Orçamento solicitado!</h3>
                 <p>Seu pedido foi enviado com sucesso. Entraremos em contato em breve para confirmar os detalhes.</p>
-                <p>Obrigado pelo seu interesse em produtos Agroflorestais!</p>
+                <p>Obrigado pelo seu interesse em produtos da agricultura de baixo carbono!</p>
             </div>
 
         </section>
